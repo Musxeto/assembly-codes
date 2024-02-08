@@ -10,6 +10,11 @@ main proc
     mov ax,@data
     mov ds,ax
     
+    lea dx,inputMsg
+    mov ah,09h
+    int 21h
+    
+    
     mov ah,1
     int 21h
     mov bl,al
@@ -24,6 +29,10 @@ main proc
     
     mov ch,ah
     mov cl,al
+    
+    lea dx,outputMsg
+    mov ah,09h
+    int 21h
      
     mov dl,ch
     add dl,48
