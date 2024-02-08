@@ -10,25 +10,20 @@ main proc
     mov ax,@data
     mov ds,ax
     
-    lea dx,inputMsg
-    mov ah,09h
-    int 21h
-    
     mov ah,1
     int 21h
     mov bl,al
+    sub bl,48
     
     mov ah,1
     int 21h
+    sub al,48
     
     mul  bl
     AAM     ;Adjust Ascii after Multiplication
+    
     mov ch,ah
     mov cl,al
-    
-    lea dx,outputMsg
-    mov ah,09h
-    int 21h 
      
     mov dl,ch
     add dl,48
